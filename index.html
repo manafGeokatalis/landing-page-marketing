@@ -2,12 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Geokatalis | Plannio</title>
   </head>
-  <body>
-    <div id="app"></div>
+  <body>    
+    <div id="app" class="font-sans relative">
+      <!-- Background pattern -->
+      <div class="absolute w-full h-[1309px] bg-gradient-to-b from-bgStart -z-10"></div>
+      <img src="./src/assets/ellipse-11.svg" alt="" class="absolute right-0 -z-10">
+      <img src="./src/assets/ellipse-13.svg" alt="" class="absolute top-[56px] -z-10">
+      <img src="./src/assets/ellipse-14.svg" alt="" class="absolute top-[410px] right-0 -z-10">
+      <img src="./src/assets/ellipse-12.svg" alt="" class="absolute top-[385px] -z-10">
+
+      <!-- Header Nav Bar -->
+      <header class="bg-white flex w-full items-center px-10 py-3 justify-between drop-shadow-md sticky top-0 z-10">
+        <div class="flex items-center h-full px-5 gap-12 font-semibold text-sm">
+          <img class="w-[118px] h-[18px]" src="./src/assets/logo-plannio.png" alt="">
+          <a href="#">Fitur Plannio</a>
+          <a href="#">Peluncuran Plannio</a>
+          <a href="#">Kontak</a>
+        </div>
+        <button class="px-8 py-3 text-base font-semibold text-darkBlue bg-briBlue rounded-xl hover:bg-hoverBlue hover:duration-300">Pre Order Sekarang</button>
+      </header>
+
+      <div class="max-w-[1120px] mx-auto z-0">
+         <!-- Hero Section -->
+         <section class="flex mx-auto mt-24 gap-6">
+           <div class="flex flex-col gap-8 w-full justify-center">
+             <h2 class="font-opensans font-bold text-4xl">PLANNIO</h2>
+             <div class="flex flex-col gap-6  text-blacky tracking-wide">
+               <h1 class="text-5xl font-bold">Upload data shp jadi peta online keren dalam hitungan detik. Gratis.</h1>
+               <p class="text-base">
+                 Plannio adalah web-app untuk mempublikasikan data spasial menjadi Web GIS dengan cara paling simpel, tanpa coding. Buat akun, upload data (shp/kmz/geojson/dan lain-lain), atur simbol peta, jadi webgis canggih dan artistik.Dapatkan akses ke seluruh fitur. Gratis, tinggal bikin akun.              
+               </p>
+             </div>
+             <div class="flex w-full justify-between gap-10 px-3">
+              <button class="px-8 py-3 w-full text-base font-semibold text-white bg-darkBlue rounded-xl ">+ Follow Kami</button>
+              <button class="px-8 py-3 w-full text-base font-semibold text-blacky bg-white border-2 border-darkBlue rounded-xl">Pre Order Plannio</button>
+             </div>
+           </div>
+           <div class=" flex items-center container w-full">
+            <img src="./src/assets/gadgets.png" alt="" class="">
+           </div>
+         </section>
+
+         <!-- Coming Soon Section -->
+         <section class="flex flex-col gap-10 mt-44">
+          <div class="flex flex-col gap-3 items-center text-center text-blacky">
+            <h2 class="font-bold text-4xl">Rilis Akhir 2024</h2>
+            <p class="text-base">Saat ini PT Geokatalis Teknologi Pemetaan sedang dalam proses pengembangan web aplikasi Plannio yang akan diluncurkan ke publik pada Kuartal 4 - 2024 tahun ini. Dukung kami dalam pengembangan web aplikasi Plannio dengan melakukan Pre Order Plannio Pro. Dapatkan harga diskon pra peluncuran dan jadilah pengguna pertama aplikasi Plannio Pro saat rilis.</p>
+          </div>
+          <div class="flex justify-center">
+            <button class="px-8 py-3 text-base inline-block font-semibold bg-white border-2 border-darkBlue rounded-xl">Pre Order Plannio</button>
+          </div>
+         </section>
+
+         <!-- Social media -->
+          <section class="flex flex-col items-center text-center gap-9 mt-36">
+            <h3 class="font-bold text-2xl">Ikuti kami di sosial media untuk info terbaru</h3>
+            <div class="flex gap-28 text-base font-semibold">
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="src/assets/instagram.png" alt="" class="h-[60px] w-[60px]">
+                <p>Instagram</p>
+              </div>
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="src/assets/whatsapp.png" alt="" class="h-[60px] w-[60px]">
+                <p>Channel Whatsapp</p>
+              </div>
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="src/assets/linkedin.png" alt="" class="h-[60px] w-[60px]">
+                <p>Linked-In</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section Langkah-langkah publish map -->
+           <section class="flex flex-col justify-center my-28 gap-16 px-16 py-10 shadowiee rounded-lg">
+            <h2 class="text-4xl text-blacky font-bold text-left">Data SHP jadi online map hanya <span class="text-white bg-[#93C5FD] px-2"> 5 langkah </span></h2>
+            <div class="container max-h-[550px] flex justify-center">
+              <img src="./src/assets/steps.png" alt="" class="">
+            </div>
+           </section>
+
+          
+
+
+       </div>
+    </div>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
