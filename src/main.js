@@ -1,4 +1,5 @@
 import './style.css';
+import polaRuang from "./assets/pola-ruang-street.json";
 
 console.log("main js masuk");
 
@@ -10,7 +11,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWFuYWY5MyIsImEiOiJjazJhNXhzeHYxN25tM2JucDBmN
         pitch: 0,
         bearing: 0,
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: './src/assets/pola-ruang-street.json'
+        style: polaRuang
     });
 
     map.on('style.load', () => {

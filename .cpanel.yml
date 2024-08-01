@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/u9042131//public_html/preorder-plannio.geokatalis.com
+    - /bin/cp dist/index.html $DEPLOYPATH
+    - /bin/cp -R dist/assets $DEPLOYPATH
