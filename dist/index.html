@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-2rqGWdUU.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geokatalis | Plannio</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+    <script type="module" crossorigin src="/assets/index-BK6lELKr.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DXgq18mX.css">
+  </head>
+  <body>    
+    <div id="app" class="font-sans relative">
+      <!-- Background pattern -->
+      <div class="absolute w-full h-[1309px] bg-gradient-to-b from-bgStart -z-10"></div>
+      <img src="data:image/svg+xml,%3csvg%20width='833'%20height='757'%20viewBox='0%200%20833%20757'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='529'%20cy='228'%20r='529'%20fill='%2393C5FD'%20fill-opacity='0.2'/%3e%3c/svg%3e" alt="" class="absolute right-0 -z-10">
+      <img src="data:image/svg+xml,%3csvg%20width='180'%20height='225'%20viewBox='0%200%20180%20225'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='67.5'%20cy='112.5'%20r='112.5'%20fill='%2393C5FD'%20fill-opacity='0.2'/%3e%3c/svg%3e" alt="" class="absolute top-[56px] -z-10">
+      <img src="data:image/svg+xml,%3csvg%20width='321'%20height='478'%20viewBox='0%200%20321%20478'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='239'%20cy='239'%20r='239'%20fill='%23E7E7FF'%20fill-opacity='0.4'/%3e%3c/svg%3e" alt="" class="absolute top-[410px] right-0 -z-10">
+      <img src="data:image/svg+xml,%3csvg%20width='449'%20height='449'%20viewBox='0%200%20449%20449'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='224.5'%20cy='224.5'%20r='224.5'%20fill='%23E7E7FF'%20fill-opacity='0.4'/%3e%3c/svg%3e" alt="" class="absolute top-[385px] -z-10">
+
+      <!-- Header Nav Bar -->
+      <header class="bg-white flex w-full items-center px-5 md:px-10 py-3 justify-between drop-shadow-md sticky top-0 z-10">
+        <div class="flex items-center h-full px-5 gap-12 font-semibold text-sm">
+          <img class="w-[118px] h-[18px]" src="data:image/png;base64,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" alt="">
+          <a class="hidden md:inline" href="#">Fitur Plannio</a>
+          <a class="hidden md:inline" href="#">Peluncuran Plannio</a>
+          <a class="hidden md:inline" href="#">Kontak</a>
+        </div>
+        <button class="hidden md:inline-block px-8 py-3 text-base font-semibold text-darkBlue bg-briBlue rounded-xl hover:bg-hoverBlue hover:duration-300">Pre Order Sekarang</button>
+      </header>
+
+      <div class="max-w-[1120px] mx-auto z-0">
+         <!-- Hero Section -->
+         <section class="flex flex-col px-[35px] md:flex-row md:px-0 mx-auto mt-10 md:mt-24 gap-6">
+           <div class="flex flex-col gap-6 md:gap-8 w-full justify-center">
+             <h2 class="font-opensans font-bold text-center md:text-left text-xl md:text-4xl">PLANNIO</h2>
+             <div class="flex flex-col gap-6 text-center md:text-left text-blacky tracking-wide">
+               <h1 class="text-2xl md:text-5xl font-bold">Upload data shp jadi peta online keren dalam hitungan detik. Gratis.</h1>
+               <div class="flex md:hidden items-center container w-full">
+                <img src="/assets/gadgets-w4Rtt9AG.png" alt="" class="">
+               </div>
+               <p class="font-semibold text-sm md:text-base">
+                 Plannio adalah web-app untuk mempublikasikan data spasial menjadi Web GIS dengan cara paling simpel, tanpa coding. Buat akun, upload data (shp/kmz/geojson/dan lain-lain), atur simbol peta, jadi webgis canggih dan artistik. Dapatkan akses ke seluruh fitur. Gratis, tinggal bikin akun.              
+               </p>
+             </div>
+             <div class="flex w-full flex-col md:flex-row md:justify-between gap-3 md:gap-10 px-3">
+               <button class="px-8 py-3 w-full text-xs md:text-xl font-semibold text-white bg-darkBlue rounded-xl ">+ Follow Kami</button>
+               <button class="px-8 py-3 w-full text-xs md:text-xl font-semibold text-blacky bg-white border-2 rounded-xl btn-gradient-1">Pre Order Plannio</button>
+             </div>
+           </div>
+           <div class="hidden md:flex items-center container w-full">
+            <img src="/assets/gadgets-w4Rtt9AG.png" alt="" class="">
+           </div>
+         </section>
+
+         <!-- Coming Soon Section -->
+         <section class="flex flex-col gap-10 mt-44">
+          <div class="flex flex-col gap-3 items-center text-center text-blacky">
+            <h2 class="font-bold text-4xl">Rilis Akhir 2024</h2>
+            <p class="text-base">Saat ini PT Geokatalis Teknologi Pemetaan sedang dalam proses pengembangan web aplikasi Plannio yang akan diluncurkan ke publik pada Kuartal 4 - 2024 tahun ini. Dukung kami dalam pengembangan web aplikasi Plannio dengan melakukan Pre Order Plannio Pro. Dapatkan harga diskon pra peluncuran dan jadilah pengguna pertama aplikasi Plannio Pro saat rilis.</p>
+          </div>
+          <div class="flex justify-center">
+            <button class="px-8 py-3 text-base inline-block font-semibold bg-white btn-gradient-1">Pre Order Plannio</button>
+          </div>
+         </section>
+
+         <!-- Social media -->
+          <section class="flex flex-col items-center text-center gap-9 mt-36">
+            <h3 class="font-bold text-2xl">Ikuti kami di sosial media untuk info terbaru</h3>
+            <div class="flex gap-28 text-base font-semibold">
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="data:image/png;base64,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" alt="" class="h-[60px] w-[60px]">
+                <p>Instagram</p>
+              </div>
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="data:image/png;base64,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" alt="" class="h-[60px] w-[60px]">
+                <p>Channel Whatsapp</p>
+              </div>
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARzSURBVHgB5ZtXiNRQFIb/VbFgw7aIde0NwSf1RQQ7tgexoeiD+CQo6IMIvipYUPRFEJW1IzZsWNaGDeygIIptsWHvvcbzezIyOzvJ3GSySWbmhw9mJ9nk/smt59wpQtWoSGgm9BK6CZ2EzkILoalQxz7vu/BaeCjcE+4L14XLwhvkgJoLc4RDwivhj2B5hP/zVjgozBZaI2aqJgwQSqFvzAqYD8ImYbB9r0jVTygTfiF4o6nwHvuFIdAmE6raCGvgr8pmC2vRBqEVQtJEoRzhG03lgTAGVah6wmLhNwArJvy2y1QXAasJtOeNi9FUdtllDERsK6cAWDHnIgJo142F8wY3eynsEHbbn6MyzRfj+02zze4yuMke+8EkxNnUAfgrcBCw6dWHR3GcW2pw8VtI/0R5w3L4L3S2LIHHsXo8zMbYRS7XWAz/Bc4Wln1yukKlm6pxUrEMZk/os8uxT4hOLPsCqJeMJ26E+ZM86XAdPsg4DGPrkEHDhB8eLzoDlWsDvwtjfm1StfvDQdWhSzKvF+UD4mpmujBN2ByCES8cs71V0nDEa9oYFPQ0KGGyRpLhKfC23uSqZSZ0sZ5Oo4SpSX+zR7/icC4jI/Ptz6yGt4Uz0AjIU+EbdBbVVxgp1Ia5qtnlOJb8ZTtor+rlyb2HhmucNDfl/BEu53KNS6M7oQv9Wi7nMmR01mNZ+XJaJtxTY1EFKw4PeiKMtstxFFpAJ92EPqA9MFdNYRI/JAwPRbS6AZ2OmuqLMAu6JjYVw1BFNFws9Ebu6ZGw2sP59FhMw+wIPE+2Y6JVwkfDc7nA6UXDXRE/cdxku8s0vWXHWQZzdafhEsRH7IHXClehK7HD0F7bTVdgrs4chzsgHmLIl2HYhknfcbjsAh2n3zn83zOYqwvfcEtELw6J61HRbEJtoaad9B7makXDgQW/slAfob3L8YYux9zG7FQ1oeE6iF41Mhx367wsmKt25LmasEXD31A4+krDOZGHDUivaPghCkePafguCkflhWb4Lg3fROHoBg1fg3OYJp/EVdVFGn4Ozbzluy4IL2iYM5WTyH/9W0YmZlpboIHzfBVDQsyE/jf8WNiO/NU+aDazQhy6FBoqzTfRUyJfVsEw2/EJ5J/KkBQGSl6WMSWxUBgIs1Qpg+VMmn1xON4/5e9x0BBOOnWEuxiv7ulwzC0m91NYCfXmKC/p0rjDxF7Gl1cCDXDnkrF0MG7dFoZi8imKbYVBwbJPhAexGiwHEHXB/bICPjagMnB2BEDUhfcKQ70N4FOMaJ4GYOUIDOAXI0txR/olAFbMOQeDXTumYuJ7LwArpnBi0QwBi+2CHVmcem+WZRmyaLMmmgAd46I2y7kCh89Qfg5QAp3F/ARghQzfaikiyHryyXKr0xGEU805Hz4O3boQqbgA4Q6dbdC9l0EbZS3aCs0TZ8pBhS7mmrldiTtxmMb0a5LZENaceQj4h1pV2eA5lHH/SA/oT/H4MDhONoIuLWmMNYLmGHFhfPwONPPPCcRz+5xA9RfLZgwt+gNQLAAAAABJRU5ErkJggg==" alt="" class="h-[60px] w-[60px]">
+                <p>Linked-In</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section Langkah-langkah publish map -->
+          <section class="flex flex-col justify-center mt-28 gap-16 px-16 py-10 shadowiee rounded-lg">
+           <h2 class="text-4xl text-blacky font-bold text-left">Data SHP jadi online map hanya <span class="text-white bg-[#93C5FD] px-2"> 5 langkah </span></h2>
+            <div class="container max-h-[550px] flex justify-center">
+              <img src="/assets/steps-CGhamOCG.png" alt="" class="">
+            </div>
+          </section>
+
+          <!-- Section Komparasi Cara Plannio -->
+          <section class="flex flex-col items-center gap-14 my-28">
+           <h2 class="text-4xl text-blacky font-bold text-center">Mengapa publikasi data spasial di Plannio <br> lebih cepat dan lebih baik?</h2>
+           <!-- Dengan cara biasa -->
+           <div class="flex items-start justify-end w-full relative">
+             <div class="container flex flex-col w-80 border-2 gap-5 py-5 px-6 rounded-xl bg-white lg:left-0 lg:top-[116px]  lg:absolute lg:justify-start justify-center">
+               <h4 class="text-2xl font-bold">Dengan cara biasa</h4>
+               <p>Kamu harus menyiapkan semua data di atas cuma untuk menyajikan satu data tematik menjadi peta</p>
+             </div>
+             <div class="bg-[#EFEFEF] rounded-xl w-5/6 p-2 flex justify-end">
+               <div class="container max-w-[760px]">                  
+                 <img src="/assets/layouting1-Bi4kBKYt.png" alt="">
+               </div>
+             </div>
+           </div>
+           <!-- Dengan menggunakan plannio -->
+           <div class="flex items-start justify-end w-full relative">
+             <div class="container flex flex-col w-80 border-2 gap-5 py-5 px-6 rounded-xl bg-gradient-to-b from-[#93C5FD] to-[#E7E7FF] lg:left-0 lg:top-[116px]  lg:absolute lg:justify-start justify-center">
+               <h4 class="text-2xl font-bold">Dengan <span class="bg-white px-1 font-opensans">PLANNIO</span></h4>
+               <p>Kamu harus menyiapkan semua data di atas cuma untuk menyajikan satu data tematik menjadi peta</p>
+             </div>
+             <div class="bg-[#EFEFEF] rounded-xl w-5/6 p-2 flex justify-end">
+               <div class="container max-w-[760px]">                  
+                 <img src="/assets/layouting2-DrQwrX2B.png" alt="">
+               </div>
+             </div>
+           </div>           
+          </section>          
+         </div>
+         <!-- background relative fitur-fitur -->
+         <div class="absolute w-full h-[3605px] bg-gradient-to-b from-[#DBEAFE] to-white mt-40 -z-10"></div>
+         <div class="max-w-[1120px] mx-auto z-0">
+          <!-- Fitur-fitur plannio -->
+          <section class="mt-80">
+            <!-- seperti medsos -->
+            <div class="flex flex-col items-start gap-20">
+              <h2 class="text-5xl text-blacky font-bold text-left w-[824px]">Interaksi dan kolaborasi pemetaan dengan fitur seperti <span class="text-white bg-[#93C5FD] px-2"> media sosial </span></h2>
+              <div class="flex justify-end w-full gap-[159px]">
+                <div class="relative">
+                  <div class="absolute -top-[55px] -left-[248px] w-[800px] h-[800px] -z-10">
+                    <img src="/assets/ellipse-16-Mqe5f4FA.png" alt="" class="">
+                  </div>
+                  <img src="/assets/hp-DjhmxgHx.png" alt="" class="">
+                  <div class="flex flex-col items-center text-center absolute top-[99px] -left-[162px]">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA8CAYAAADVPrJMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMeSURBVHgB7Zrdiw5RHMe/XlZe9wYl5DVZb4VEXpIo6+XCjXKDcuNCScpGKe2VCxdSCuXOPyC3oqVIuUBqk9g2ihB5t3af5ezv25mtbXrOPHPmOTN7Tp1Pfdp9mt88M7+Zc86c85sHiEQikUgkEomMLmNQLpPFreJCsU1cLM4SW8UWsSb+ED+IPeJz8U3y9xMCYpl4UuwS/4uqgP3J/qegL5S37BJviX9QLFGTg+JNcQvKb5m52Sbeg9tETd4RN2MUmSZeFv+imoSHZZc5Dz1eVMoq8RWqTTZtN/T4UQnsu58BKA/8CN3XS2U/9MDiQ8LDDiTnVQq8or8BKA/9Ji6HY+bBnyZt8r04Fw65DUAF4A04Yh8AFYh8nO1Gk3AG9AKACkjO28ejCXYAUAG6KSupscjmOMLkaNbGrAn8OOhlX+XTPQfwSTPTtDHrTnOqGWLCZAb0ur0uWUmvgB2cEp4Wt4ud0H2rHl+T7YzjerlmiPslXkjijok/YccGFIAJ2AweO1P7nzHEHUzFHTHEdaTi9lieT6HxqNPiAH119p9viE0/TiYa4ubU+U6bafBZGMhq3jbNaQJ0PxpJmyF2UerzSkPc0tRnXsRJyM8gCsAFhk1zeigugR7110IX+urFPYNeHPCCc9x4aoh7La5O4vi99y3P5zAKwIN9tzwQmzmrmbUGcay2vEXjqstAEtdneR600EBGrhY4mA/yYragIKxX9wNQgfkoK6lG09Be6CJcaFxHk3Cq+hLh3GWOQ61wAKuORd9WVG0HHHICgPJcPjmmwCFrACiP5YidqxzcaCAbyV74zTnxARzzGP7e5UsoganiPwDKQ/k+rZS3me0AlGdyxWVcSbngCgDlkVyMtKNkehqcxBdUkyxf37Ca0lSJNw+sNaUnJvzcJV6ELhNzBnQAevQsI1mutq6hwp9iHEoO+gR60GByWYt5Ps95N/j+uplZHPssLyzLTk4nHHlGvXXQxbxe6CTywjnAeui+t1FcAH2nTE2TXaQ7OQ5bzN3kf+dU/cMVlpRni9Ohk+eylVXPd7CvdkYikUgkEolEgmUIcwh+0P74bk0AAAAASUVORK5CYII=" alt="" class="">
+                    <p>Komentar</p>
+                  </div>
+                  <div class="flex flex-col items-center text-center absolute top-[330px] -left-[162px]">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA8CAYAAADVPrJMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKzSURBVHgB7Zo7aBRRFIZ/jUbiM4jgCzWKKPhABG0UBFttfJcWoqCinWAjYqGFIBY2gmBlZWVlYyHYqYUIgoqCqIiCGkgCCXkn5+fOkg2ZnXt2c3dyc3I/+AjsnLDzz87cuffMAIlEIpGYfbQgHs6Kp8Vt4nexD3OAfnEs84d4FMZpw0TgisPiQRhmNaaGpu9hmH3IDz0qbkRg5iMOdtX4fJ54GIGJJfSBgm1rEZhYQgf/NYuIIfQmcWvB9l8ITAyhr3i2v4MxNouDyB+56W+4wcwMHKC+oXZgehuG2C/+RHHgf+IyGOG42IPiwPQOjMCRmqsnX+AuGPqVH8EfmD6EEdrFXuhC74URLkIXmEvKBWgiZd0DGeKr2KGo5X2b62vuGydPLZg8iRrOHEWDNPWIVnESusCkVfwiLoTbP4avbmuNwIXmpdIJ12X5JD6AuytEAXf8M3Sn9nT8KG5AJJxH8wNXfIkIWAd3Co6V6CnMMM9RbmD6yrdT2oFsi7gy53MOKryWBnK2cRp5BOXTjgBcE4dQ+8hypbQmq90ON7d+ivJ/Ycrb2B4EoEvxZZez2md17mRob0KBpnOyRFGzGHHwV1MUS2MwFNehmGVaC90h3vIVWQtNvPdpi6Hv+wqshb4rPvYVWQrNFdYNTaGl0Ly1tmkKLYXmmvuYptDaNX1BU2Qt9Jw7vbvFq5pCK6G5CjwhvtYUWwnNa1ndKrIS2tstqcZK6LpyWAjNVtX/ev5BE1rzJGEk+zuE8uHrG8Gb/E9Q3KLhY5jKizIrxEPiJfEe3OCieRbdiDzA59AAmmdZnN6dEdfnbOOXvxA/FPw/z6bdcE8id8At9HeKq+AmE0tR3zM19uzewPXD3qIBZvIllkVwgRmcbVueJcuzz1qz7YQHlm8IMyxfvPkDZS8skUgkEpYYB3egeWZEPC3YAAAAAElFTkSuQmCC" alt="" class="">
+                    <p>Suka</p>
+                  </div>
+                  <div class="flex flex-col items-center text-center absolute top-[531px] -left-[134px]">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALJSURBVHgB7ZpPiE1RHMc/hvJvQSgh5c8kZoWNlSxIkuRPbFCU2YpiYSHNbISNJIrFLJSwkCiNoQyZhZVQM8qYjPwZf4qw8C/X99d5GvN6vbn3vXvv3Hs7n/ps3jv3vfd7557z+51zLng8Ho/H4/GkxKgq752Xi8kX3+UxeU3+ICKt8o8McuDvUpDWQQ1yKTXSLL8BQYZ9JNfLMXKJ7JAbqQP71/qAIGO+lYfleDlDHsfdke3EwGx5Ewgy4jk5F9ere2V/6XUbt4uIiUnyBBCMoF1yOW6yXSXvl71/hATYIz8DQYq+lrvkWDlfXsTNyP+3eSVnkRCr5UsgSNgv8oycLKfK/aXXKrXdTcLYGHpIcsFeZzC9bJU9Vdp24no/cSbKs8QbaLfcjhunlmbah2n/S64lReyH7St9cT2B2gx7QE6R0+Rp+TXEdW2MECsZTA9RtNx5WTbKCXInLseGufYdbhIbMZrkA8IHa1XSmtK1lma6IlxrtpIBpstLVP+h1oMHccPBesgKiah1ey+uysoM9u+X50or8k/JOXK0bJHviT4MzA1kkC3yE6737sgVuF61Yt9m46BGO8gwC+Q2OU4ulFepb9n5s/Q5mcbSzCHqT13mUXKApZwgBq1enkkOsGWc3Yr1BtxMjnhCfcF2EkO93EB6PKZ2LJ3Z5lzkjbly0gz4KbVzQd4gBtIM+AO1YfVyCzGRZsAvqA0rO/vIIfOInoef4VZQucQ2CwaIFvBmck6UpeMtCoCdV4Wtl5tIgDQnLWMgZDvb/+4mAdIOuD9EmzfyJAXBTg0KVS8Ph22mVwv2Lm7dXCg+UjlYq5fXUUDuUTngNgqKbeKVB2sbeY2kQNqztFFpprbjml4Kyg6G9q4Fmtt6OQzLGBrwJgqOnUz8e1DmNtUfnSoEtqH3HLdUjO15jChfnjaWb6/gTiR68Hg8Ho/H4ykqfwER2as+keWvwAAAAABJRU5ErkJggg==" alt="" class="">
+                    <p>Bagikan</p>
+                  </div>
+                  <div class="flex flex-col items-center text-center absolute top-[292px] left-[344px]">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMiSURBVHgB7Zo5aBRRHMa/1Ug8EjUeoEQjwSIBKy0iSoooNoLEAxFJZ5NKISBaWqQRtRILMcZS0SIJgoVg4REQQW08WUSNByGFoCQaEkWf3z9vF3fdI2/2vZ2ZDO8HP3Z2dgbmm7fzzgE8Ho/H48nSTp/Qr/Q6bUKCWU0/UZVjPxLMHuSHFUdNTuSBKVpPl9F5sMDq5IAsKLKvttwJDNdIz3DzEX1HR2ia+/rpLsSUFG2l51FYwpN0H135/0n8sYtOUFXCX/QyrUFMkAs5SYfpTxSGzXUC+obMwB3ddLpM2FyH6BJEzCHov6AK4HHojRY6VRCsoUGpjg6lamqKhT6KiFhIL9E/CBb2N90A/eVaQaDOTqXSaTVDc3OxwONSoZlcoMtKS5qdG7Qb+rkNwjP6IXPRewt+nZ4G+vrKnV9PDyBE5MYNIlip5noVeqO95LPa0lKuhMVzphfqglN0PypnIvO5FJVTa3KQi8Cb6DHYsTzzOYbK+WFykIvAJ+gK2NGW+XyBf6UdlMcmB9kGlpr1IOxppq0p3V5fQHDe0NsIAelYKEdehN5oUrrGzq+UpP2tq1MqlSpWYR1BSAzAXeAv0PWBfNlNv5essfM9jZCQruNbuAssyiBhcSb0Zvq6TNBR2qMCtvlBOwi5SEU1At3ou+Q+7YIOJDdV6oid0AMQ6cnJ8yo3ZiBlOLx0xRo6BbclnPUldH/c+fDVpoTX0vcwbPArQII/oLegS/Qj/UbHERESuFolXMpBWBLmjEcs8IGTjg+cdHzgpOMDJx2bwKtQvW5lKdbDEpvAOxA+W+g6REAj3I+FTb2CCLiJaMKKsqoR2pSO0IvowmaVmc1tCAFZ2pwEoGJgGnqIWjVkKnUMgIqRQwjIfMPjFtE7dCPihcxzSUtzD47pQLxKNtdXMC8449cFZCaxBzFYaS/CU+j1ZU8xbGYtZ2Mr9OJ4EKQFsF2JjIztCP48PkeVqeZoSV5j+IxgDGOOIy+VmZauLGi3YY4jb989hFngXiQEGcPeRemgUlFJ2GpWoKEjYQ5DrxPJip+sD8nw8iwS8Df2eDwejyv+Aildu5pp16XnAAAAAElFTkSuQmCC" alt="" class="">
+                    <p>Pemberitahuan</p>
+                  </div>
+                  <div class="flex flex-col items-center text-center absolute top-[487px] left-[355px]">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA8CAYAAADVPrJMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG2SURBVHgB7dpbK0RRGMbxJ/kWkg/kUCIlJFFyiCQpxQcQIoVIvoSaQijlSrlSTsmFkLiSGRdOz9seqQntw1pr72a9v/qXpPQ0s9fsmQZQSilV3kbYZ4YbQ0gV8JCO9oWO9oWO9oWO9oWO9oWO9oWO9oWO9oWO9oWO9oWO9kVao+9ZPbtFCtIYLR/Mt7JN1sne4Vgao0fZfvHnHdYLx1yPXmTzJb9bZ7NwyOXoAzaM4OldapLtwhFXo69YC34fLAoIDrZzOOBi9COrRXBi/yfP6tgLLHMxuo2dhvzbCwSPeB4W2R49zrYQzR6Ca9wam6OX2TTimWNrsMTW6CM2hGT6EP1ZEoqN0XJSN7I3JCN3al0IrnOjTI9+YA3sBmbIvbmc6HcwyORoeQ1uZycwS167u9kHDDE5Wk7qbdiRYwMwxNToJTYDu1bYAgwwMfqQDeLvW0yTJvDzDi22pKOvWTPcDBZypyYH5SUSSDL6CRZO1hCei/+3gJiSjO6A+ZM6rDMEj/grYog7Wq6tHNIln7pMwbLvL8SuIls2EPELsZWI5pj1I1t6WA0skfvpamRTFWuCUkqpMvYFIdNy4u0ue/IAAAAASUVORK5CYII=" alt="" class="">
+                    <p>Follow</p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-5 w-[341px]">
+                  <h4 class="text-2xl font-bold">Bagikan peta pilihanmu dengan mudah ke berbagai platform</h4>
+                  <p>Sukai, beri komentar, nyalakan pemberitahuan untuk peta atau akun pembuat peta. </p>
+                </div>
+              </div>
+            </div>
+            <!-- comment on map object -->
+             <div class="flex flex-col gap-14 mt-32 px-10 py-5 bg-white rounded-xl">
+              <h3 class="font-bold text-4xl">Lakukan pemetaan partisipatif dengan fitur komentar langsung pada muka peta</h3>
+              <div class="flex gap-14">
+                <div class="flex flex-col gap-5 w-80">
+                  <h4 class="text-2xl font-bold">Komentar pada Peta</h4>
+                  <p>
+                    Berikan komentar langsung pada muka peta atau objek yang ada di peta. Memudahkan dalam proses pemetaan partisipatif, bekerja dalam tim atau, presentasi hasil pemetaan dengan stakeholder.
+                  </p>
+                </div>
+                <div class="relative">
+                  <img src="/assets/map-DGHMufFu.png" alt="">
+                  <img src="/assets/bubble-comment-De2XKUB1.png" alt="" class="absolute top-[215px] -left-[52px]">
+                </div>
+               </div>
+            </div>
+          </section>
+          <!-- Demo display peta -->
+           <section class="flex flex-col mt-32 gap-10">
+            <div class="flex flex-col text-center">
+              <h3 class="font-bold text-4xl">Demo tampilan tema map Plannio</h3>
+              <p>
+                itur 3D Terrain secara otomatis tersedia untuk semua map yang dibuat
+              </p>
+            </div>
+            <div class="relative w-full h-[661px] rounded-xl">
+              <div id="map" class="absolute w-full h-full rounded-xl"></div>
+              <button class="px-8 py-3 text-xl font-semibold text-white bg-darkBlue rounded-xl absolute bottom-2 right-[421px]">Tampilkan 3D Terrain</button>
+            </div>
+           </section>
+           <!-- Coming Soon Section -->
+           <section class="flex flex-col gap-10 mt-44">
+             <div class="flex flex-col gap-3 items-center text-center text-blacky">
+               <h2 class="font-bold text-4xl">Rilis Akhir 2024</h2>
+               <p class="text-base">Saat ini PT Geokatalis Teknologi  Pemetaan sedang dalam proses pengembangan web aplikasi Plannio yang akan diluncurkan ke publik pada Kuartal 4 - 2024 tahun ini. Dukung kami dalam pengembangan web aplikasi Plannio dengan melakukan Pre Order Plannio Pro. Dapatkan harga diskon pra peluncuran dan jadilah pengguna pertama aplikasi Plannio Pro saat rilis.</p>
+             </div>
+             <div class="flex justify-center">
+               <button class="px-8 py-3 text-base inline-block font-semibold btn-gradient-1">Pre Order Plannio</button>
+             </div>
+           </section>
+           <!-- Social media -->
+          <section class="flex flex-col items-center text-center gap-9 mt-36">
+            <h3 class="font-bold text-2xl">Ikuti kami di sosial media untuk info terbaru</h3>
+            <div class="flex gap-28 text-base font-semibold">
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="data:image/png;base64,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" alt="" class="h-[60px] w-[60px]">
+                <p>Instagram</p>
+              </div>
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="data:image/png;base64,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" alt="" class="h-[60px] w-[60px]">
+                <p>Channel Whatsapp</p>
+              </div>
+              <div class="flex flex-col items-center gap-5 cursor-pointer">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARzSURBVHgB5ZtXiNRQFIb/VbFgw7aIde0NwSf1RQQ7tgexoeiD+CQo6IMIvipYUPRFEJW1IzZsWNaGDeygIIptsWHvvcbzezIyOzvJ3GSySWbmhw9mJ9nk/smt59wpQtWoSGgm9BK6CZ2EzkILoalQxz7vu/BaeCjcE+4L14XLwhvkgJoLc4RDwivhj2B5hP/zVjgozBZaI2aqJgwQSqFvzAqYD8ImYbB9r0jVTygTfiF4o6nwHvuFIdAmE6raCGvgr8pmC2vRBqEVQtJEoRzhG03lgTAGVah6wmLhNwArJvy2y1QXAasJtOeNi9FUdtllDERsK6cAWDHnIgJo142F8wY3eynsEHbbn6MyzRfj+02zze4yuMke+8EkxNnUAfgrcBCw6dWHR3GcW2pw8VtI/0R5w3L4L3S2LIHHsXo8zMbYRS7XWAz/Bc4Wln1yukKlm6pxUrEMZk/os8uxT4hOLPsCqJeMJ26E+ZM86XAdPsg4DGPrkEHDhB8eLzoDlWsDvwtjfm1StfvDQdWhSzKvF+UD4mpmujBN2ByCES8cs71V0nDEa9oYFPQ0KGGyRpLhKfC23uSqZSZ0sZ5Oo4SpSX+zR7/icC4jI/Ptz6yGt4Uz0AjIU+EbdBbVVxgp1Ia5qtnlOJb8ZTtor+rlyb2HhmucNDfl/BEu53KNS6M7oQv9Wi7nMmR01mNZ+XJaJtxTY1EFKw4PeiKMtstxFFpAJ92EPqA9MFdNYRI/JAwPRbS6AZ2OmuqLMAu6JjYVw1BFNFws9Ebu6ZGw2sP59FhMw+wIPE+2Y6JVwkfDc7nA6UXDXRE/cdxku8s0vWXHWQZzdafhEsRH7IHXClehK7HD0F7bTVdgrs4chzsgHmLIl2HYhknfcbjsAh2n3zn83zOYqwvfcEtELw6J61HRbEJtoaad9B7makXDgQW/slAfob3L8YYux9zG7FQ1oeE6iF41Mhx367wsmKt25LmasEXD31A4+krDOZGHDUivaPghCkePafguCkflhWb4Lg3fROHoBg1fg3OYJp/EVdVFGn4Ozbzluy4IL2iYM5WTyH/9W0YmZlpboIHzfBVDQsyE/jf8WNiO/NU+aDazQhy6FBoqzTfRUyJfVsEw2/EJ5J/KkBQGSl6WMSWxUBgIs1Qpg+VMmn1xON4/5e9x0BBOOnWEuxiv7ulwzC0m91NYCfXmKC/p0rjDxF7Gl1cCDXDnkrF0MG7dFoZi8imKbYVBwbJPhAexGiwHEHXB/bICPjagMnB2BEDUhfcKQ70N4FOMaJ4GYOUIDOAXI0txR/olAFbMOQeDXTumYuJ7LwArpnBi0QwBi+2CHVmcem+WZRmyaLMmmgAd46I2y7kCh89Qfg5QAp3F/ARghQzfaikiyHryyXKr0xGEU805Hz4O3boQqbgA4Q6dbdC9l0EbZS3aCs0TZ8pBhS7mmrldiTtxmMb0a5LZENaceQj4h1pV2eA5lHH/SA/oT/H4MDhONoIuLWmMNYLmGHFhfPwONPPPCcRz+5xA9RfLZgwt+gNQLAAAAABJRU5ErkJggg==" alt="" class="h-[60px] w-[60px]">
+                <p>Linked-In</p>
+              </div>
+            </div>
+          </section>
+          <!-- Pricing and packages  -->
+           <section class="flex flex-col items-center gap-16 mt-44">
+            <h2 class="font-bold text-5xl text-center">Plan and Pricing</h2>
+            <div class="flex gap-8 items-center">
+              <!-- Free -->
+              <div class="flex flex-col items-center gap-10 h-[391px] w-[357px] bg-[#DBEAFE] rounded-xl py-8 px-10 shadowiee">
+                <h4 class="font-bold text-2xl text-center text-darkBlue">Free</h4>
+                <ul class="list-disc flex flex-col gap-2 font-medium text-base">
+                  <li class="font-semibold">Akses Seluruh Fitur</li>
+                  <li><span class="font-semibold">3 Bulan</span> Time Limit Publikasi Map</li>
+                  <li>Up to <span class="font-semibold">1000 Map Visit</span> per Bulan</li>
+                  <li><span class="font-semibold">500 MB</span> Maksimum Total Upload Data</li>
+                  <li class="font-semibold">1 Album Map Free</li>
+                </ul>
+              </div>
+              <!-- Pro -->
+              <div class="flex flex-col items-center gap-10 w-[357px] bg-gradient-to-br from-[#93C5FD] via-white to-[#DBEAFE] rounded-xl py-8 px-10 shadowiee">
+                <h4 class="font-bold text-4xl text-center text-darkBlue">Pro</h4>
+                <ul class="list-disc flex flex-col gap-2 font-medium text-base">
+                  <li class="font-semibold">Akses Seluruh Fitur</li>
+                  <li><span class="font-semibold">Unlimited</span> Time Limit Publikasi Map</li>
+                  <li>Up to <span class="font-semibold">2000 Map Visit</span> per Bulan (+custom add)</li>
+                  <li><span class="font-semibold">5 GB</span> Total Upload Data (+custom add)</li>
+                  <li class="font-semibold">10 Album Map Free (+custom add)</li>
+                </ul>
+                <div class="flex flex-col gap-2 items-center text-center">
+                  <p class="text-gray-500 text-sm">Harga normal :<span class="line-through px-1">IDR 100K / bulan</span> </p>
+                  <h4 class="font-bold text-2xl text-darkBlue"><span class="text-base">Diskon pre rilis</span> <br>IDR 100K / 3 bulan</h4>
+                </div>
+              </div>
+              <!-- Enterprise -->
+              <div class="flex flex-col items-center gap-10 w-[357px] bg-gradient-to-br from-[#91959B] via-white to-[#91959B] rounded-xl py-8 px-10 shadowiee">
+                <h4 class="font-bold text-4xl text-center">Enterprise</h4>
+                <ul class="list-disc flex flex-col gap-2 font-medium text-base">
+                  <li class="font-semibold">Akses Seluruh Fitur</li>
+                  <li><span class="font-semibold">Unlimited</span> Time Limit Publikasi Map</li>
+                  <li>Up to <span class="font-semibold">2000 Map Visit</span> per Bulan (+custom add)</li>
+                  <li><span class="font-semibold">5 GB</span> Total Upload Data (+custom add)</li>
+                  <li class="font-semibold">Unlimited Map Free</li>
+                  <li class="font-semibold">Alamat Web Custom untuk Geoportal</li>
+                  <li class="font-semibold">Design Custom untuk Halaman Geoportal</li>
+                </ul>
+                <div class="flex flex-col gap-2 items-center text-center">
+                  <h4 class="font-bold text-2xl">Contact Sales</h4>
+                </div>
+              </div>
+            </div>
+           </section>
+          </div>
+          <!-- Lakukan Pre Order -->
+          <section class=" mt-40 bg-gradient-to-br from-white via-[#DBEAFE] to-white h-[729px]">
+            <div class="flex flex-col justify-center h-full w-max-[1120px] gap-16">
+              <div class="flex flex-col items-center">
+                <h2 class="font-bold text-5xl text-center">Diskon Pre Order Langganan Akun</h2>
+                <h2 class="font-bold text-5xl text-center bg-[#93C5FD] inline-block my-1 py-1 px-2">PLANNIO PRO</h2>
+              </div>
+              <!-- pilihan paket -->
+              <div class="flex gap-16 justify-center">
+                <!-- Paket 3 bulan -->
+                <div class="flex flex-col gap-5 justify-center items-center">
+                  <h4 class="font-bold text-2xl">3 Bulan</h4>
+                  <div class="flex flex-col items-center">
+                    <p class="text-blacky text-sm line-through">Normal price IDR 300K</p>
+                    <p class="font-bold text-4xl">IDR 100K</p>
+                  </div>
+                </div>
+                <!-- Paket 1 tahun -->
+                <div class="flex flex-col gap-5 justify-center items-center">
+                  <h4 class="font-bold text-2xl">1 Tahun</h4>
+                  <div class="flex flex-col items-center">
+                    <p class="text-blacky text-sm line-through">Normal price IDR 1 Mio</p>
+                    <p class="font-bold text-4xl">IDR 300K</p>
+                  </div>
+                </div>
+              </div>
+              <button class="px-8 py-3 w-[390px] mx-auto text-xl inline-block font-semibold btn-gradient-1">Pre Order Plannio</button>
+            </div>
+          </section>
+          <footer class="flex justify-between items-center px-20 h-24">
+            <img src="/assets/logo-geokatalis-vector-CwGPlSk9.svg" alt="">
+            <p>© 2024 Geokatalis. All right reserved.</p>
+          </footer>
+    </div>
+  </body>
+</html>
