@@ -18,33 +18,36 @@
       <img src="./src/assets/ellipse-12.svg" alt="" class="absolute top-[385px] -z-10">
 
       <!-- Header Nav Bar -->
-      <header class="bg-white flex w-full items-center px-10 py-3 justify-between drop-shadow-md sticky top-0 z-10">
+      <header class="bg-white flex w-full items-center px-5 md:px-10 py-3 justify-between drop-shadow-md sticky top-0 z-10">
         <div class="flex items-center h-full px-5 gap-12 font-semibold text-sm">
           <img class="w-[118px] h-[18px]" src="./src/assets/logo-plannio.png" alt="">
-          <a href="#">Fitur Plannio</a>
-          <a href="#">Peluncuran Plannio</a>
-          <a href="#">Kontak</a>
+          <a class="hidden md:inline" href="#">Fitur Plannio</a>
+          <a class="hidden md:inline" href="#">Peluncuran Plannio</a>
+          <a class="hidden md:inline" href="#">Kontak</a>
         </div>
-        <button class="px-8 py-3 text-base font-semibold text-darkBlue bg-briBlue rounded-xl hover:bg-hoverBlue hover:duration-300">Pre Order Sekarang</button>
+        <button class="hidden md:inline-block px-8 py-3 text-base font-semibold text-darkBlue bg-briBlue rounded-xl hover:bg-hoverBlue hover:duration-300">Pre Order Sekarang</button>
       </header>
 
       <div class="max-w-[1120px] mx-auto z-0">
          <!-- Hero Section -->
-         <section class="flex mx-auto mt-24 gap-6">
-           <div class="flex flex-col gap-8 w-full justify-center">
-             <h2 class="font-opensans font-bold text-4xl">PLANNIO</h2>
-             <div class="flex flex-col gap-6  text-blacky tracking-wide">
-               <h1 class="text-5xl font-bold">Upload data shp jadi peta online keren dalam hitungan detik. Gratis.</h1>
-               <p class="text-base">
+         <section class="flex flex-col px-[35px] md:flex-row md:px-0 mx-auto mt-10 md:mt-24 gap-6">
+           <div class="flex flex-col gap-6 md:gap-8 w-full justify-center">
+             <h2 class="font-opensans font-bold text-center md:text-left text-xl md:text-4xl">PLANNIO</h2>
+             <div class="flex flex-col gap-6 text-center md:text-left text-blacky tracking-wide">
+               <h1 class="text-2xl md:text-5xl font-bold">Upload data shp jadi peta online keren dalam hitungan detik. Gratis.</h1>
+               <div class="flex md:hidden items-center container w-full">
+                <img src="./src/assets/gadgets.png" alt="" class="">
+               </div>
+               <p class="font-semibold text-sm md:text-base">
                  Plannio adalah web-app untuk mempublikasikan data spasial menjadi Web GIS dengan cara paling simpel, tanpa coding. Buat akun, upload data (shp/kmz/geojson/dan lain-lain), atur simbol peta, jadi webgis canggih dan artistik. Dapatkan akses ke seluruh fitur. Gratis, tinggal bikin akun.              
                </p>
              </div>
-             <div class="flex w-full justify-between gap-10 px-3">
-              <button class="px-8 py-3 w-full text-xl font-semibold text-white bg-darkBlue rounded-xl ">+ Follow Kami</button>
-              <button class="px-8 py-3 w-full text-xl font-semibold text-blacky bg-white border-2 border-darkBlue rounded-xl">Pre Order Plannio</button>
+             <div class="flex w-full flex-col md:flex-row md:justify-between gap-3 md:gap-10 px-3">
+               <button class="px-8 py-3 w-full text-xs md:text-xl font-semibold text-white bg-darkBlue rounded-xl ">+ Follow Kami</button>
+               <button class="px-8 py-3 w-full text-xs md:text-xl font-semibold text-blacky bg-white border-2 rounded-xl btn-gradient-1">Pre Order Plannio</button>
              </div>
            </div>
-           <div class=" flex items-center container w-full">
+           <div class="hidden md:flex items-center container w-full">
             <img src="./src/assets/gadgets.png" alt="" class="">
            </div>
          </section>
@@ -56,7 +59,7 @@
             <p class="text-base">Saat ini PT Geokatalis Teknologi Pemetaan sedang dalam proses pengembangan web aplikasi Plannio yang akan diluncurkan ke publik pada Kuartal 4 - 2024 tahun ini. Dukung kami dalam pengembangan web aplikasi Plannio dengan melakukan Pre Order Plannio Pro. Dapatkan harga diskon pra peluncuran dan jadilah pengguna pertama aplikasi Plannio Pro saat rilis.</p>
           </div>
           <div class="flex justify-center">
-            <button class="px-8 py-3 text-base inline-block font-semibold bg-white border-2 border-darkBlue rounded-xl">Pre Order Plannio</button>
+            <button class="px-8 py-3 text-base inline-block font-semibold bg-white btn-gradient-1">Pre Order Plannio</button>
           </div>
          </section>
 
@@ -194,7 +197,7 @@
                <p class="text-base">Saat ini PT Geokatalis Teknologi  Pemetaan sedang dalam proses pengembangan web aplikasi Plannio yang akan diluncurkan ke publik pada Kuartal 4 - 2024 tahun ini. Dukung kami dalam pengembangan web aplikasi Plannio dengan melakukan Pre Order Plannio Pro. Dapatkan harga diskon pra peluncuran dan jadilah pengguna pertama aplikasi Plannio Pro saat rilis.</p>
              </div>
              <div class="flex justify-center">
-               <button class="px-8 py-3 text-base inline-block font-semibold bg-white border-2 border-darkBlue rounded-xl">Pre Order Plannio</button>
+               <button class="px-8 py-3 text-base inline-block font-semibold btn-gradient-1">Pre Order Plannio</button>
              </div>
            </section>
            <!-- Social media -->
@@ -215,7 +218,88 @@
               </div>
             </div>
           </section>
-         </div>
+          <!-- Pricing and packages  -->
+           <section class="flex flex-col items-center gap-16 mt-44">
+            <h2 class="font-bold text-5xl text-center">Plan and Pricing</h2>
+            <div class="flex gap-8 items-center">
+              <!-- Free -->
+              <div class="flex flex-col items-center gap-10 h-[391px] w-[357px] bg-[#DBEAFE] rounded-xl py-8 px-10 shadowiee">
+                <h4 class="font-bold text-2xl text-center text-darkBlue">Free</h4>
+                <ul class="list-disc flex flex-col gap-2 font-medium text-base">
+                  <li class="font-semibold">Akses Seluruh Fitur</li>
+                  <li><span class="font-semibold">3 Bulan</span> Time Limit Publikasi Map</li>
+                  <li>Up to <span class="font-semibold">1000 Map Visit</span> per Bulan</li>
+                  <li><span class="font-semibold">500 MB</span> Maksimum Total Upload Data</li>
+                  <li class="font-semibold">1 Album Map Free</li>
+                </ul>
+              </div>
+              <!-- Pro -->
+              <div class="flex flex-col items-center gap-10 w-[357px] bg-gradient-to-br from-[#93C5FD] via-white to-[#DBEAFE] rounded-xl py-8 px-10 shadowiee">
+                <h4 class="font-bold text-4xl text-center text-darkBlue">Pro</h4>
+                <ul class="list-disc flex flex-col gap-2 font-medium text-base">
+                  <li class="font-semibold">Akses Seluruh Fitur</li>
+                  <li><span class="font-semibold">Unlimited</span> Time Limit Publikasi Map</li>
+                  <li>Up to <span class="font-semibold">2000 Map Visit</span> per Bulan (+custom add)</li>
+                  <li><span class="font-semibold">5 GB</span> Total Upload Data (+custom add)</li>
+                  <li class="font-semibold">10 Album Map Free (+custom add)</li>
+                </ul>
+                <div class="flex flex-col gap-2 items-center text-center">
+                  <p class="text-gray-500 text-sm">Harga normal :<span class="line-through px-1">IDR 100K / bulan</span> </p>
+                  <h4 class="font-bold text-2xl text-darkBlue"><span class="text-base">Diskon pre rilis</span> <br>IDR 100K / 3 bulan</h4>
+                </div>
+              </div>
+              <!-- Enterprise -->
+              <div class="flex flex-col items-center gap-10 w-[357px] bg-gradient-to-br from-[#91959B] via-white to-[#91959B] rounded-xl py-8 px-10 shadowiee">
+                <h4 class="font-bold text-4xl text-center">Enterprise</h4>
+                <ul class="list-disc flex flex-col gap-2 font-medium text-base">
+                  <li class="font-semibold">Akses Seluruh Fitur</li>
+                  <li><span class="font-semibold">Unlimited</span> Time Limit Publikasi Map</li>
+                  <li>Up to <span class="font-semibold">2000 Map Visit</span> per Bulan (+custom add)</li>
+                  <li><span class="font-semibold">5 GB</span> Total Upload Data (+custom add)</li>
+                  <li class="font-semibold">Unlimited Map Free</li>
+                  <li class="font-semibold">Alamat Web Custom untuk Geoportal</li>
+                  <li class="font-semibold">Design Custom untuk Halaman Geoportal</li>
+                </ul>
+                <div class="flex flex-col gap-2 items-center text-center">
+                  <h4 class="font-bold text-2xl">Contact Sales</h4>
+                </div>
+              </div>
+            </div>
+           </section>
+          </div>
+          <!-- Lakukan Pre Order -->
+          <section class=" mt-40 bg-gradient-to-br from-white via-[#DBEAFE] to-white h-[729px]">
+            <div class="flex flex-col justify-center h-full w-max-[1120px] gap-16">
+              <div class="flex flex-col items-center">
+                <h2 class="font-bold text-5xl text-center">Diskon Pre Order Langganan Akun</h2>
+                <h2 class="font-bold text-5xl text-center bg-[#93C5FD] inline-block my-1 py-1 px-2">PLANNIO PRO</h2>
+              </div>
+              <!-- pilihan paket -->
+              <div class="flex gap-16 justify-center">
+                <!-- Paket 3 bulan -->
+                <div class="flex flex-col gap-5 justify-center items-center">
+                  <h4 class="font-bold text-2xl">3 Bulan</h4>
+                  <div class="flex flex-col items-center">
+                    <p class="text-blacky text-sm line-through">Normal price IDR 300K</p>
+                    <p class="font-bold text-4xl">IDR 100K</p>
+                  </div>
+                </div>
+                <!-- Paket 1 tahun -->
+                <div class="flex flex-col gap-5 justify-center items-center">
+                  <h4 class="font-bold text-2xl">1 Tahun</h4>
+                  <div class="flex flex-col items-center">
+                    <p class="text-blacky text-sm line-through">Normal price IDR 1 Mio</p>
+                    <p class="font-bold text-4xl">IDR 300K</p>
+                  </div>
+                </div>
+              </div>
+              <button class="px-8 py-3 w-[390px] mx-auto text-xl inline-block font-semibold btn-gradient-1">Pre Order Plannio</button>
+            </div>
+          </section>
+          <footer class="flex justify-between items-center px-20 h-24">
+            <img src="./src/assets/logo-geokatalis-vector.svg" alt="">
+            <p>© 2024 Geokatalis. All right reserved.</p>
+          </footer>
     </div>
     <script type="module" src="./src/main.js"></script>
   </body>
