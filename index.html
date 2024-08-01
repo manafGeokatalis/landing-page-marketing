@@ -30,7 +30,7 @@
 
       <div class="max-w-[1120px] mx-auto z-0">
          <!-- Hero Section -->
-         <section class="flex flex-col px-[35px] md:flex-row md:px-0 mx-auto mt-10 md:mt-24 gap-6">
+         <section class="flex flex-col md:flex-row md:px-0 mx-auto mt-10 md:mt-24 gap-6 w-full px-[35px]">
            <div class="flex flex-col gap-6 md:gap-8 w-full justify-center">
              <h2 class="font-opensans font-bold text-center md:text-left text-xl md:text-4xl">PLANNIO</h2>
              <div class="flex flex-col gap-6 text-center md:text-left text-blacky tracking-wide">
@@ -53,54 +53,101 @@
          </section>
 
          <!-- Coming Soon Section -->
-         <section class="flex flex-col gap-10 mt-44">
+         <section class="flex flex-col gap-10 mt-20 md:mt-44 w-full px-[35px]">
           <div class="flex flex-col gap-3 items-center text-center text-blacky">
-            <h2 class="font-bold text-4xl">Rilis Akhir 2024</h2>
-            <p class="text-base">Saat ini PT Geokatalis Teknologi Pemetaan sedang dalam proses pengembangan web aplikasi Plannio yang akan diluncurkan ke publik pada Kuartal 4 - 2024 tahun ini. Dukung kami dalam pengembangan web aplikasi Plannio dengan melakukan Pre Order Plannio Pro. Dapatkan harga diskon pra peluncuran dan jadilah pengguna pertama aplikasi Plannio Pro saat rilis.</p>
+            <h2 class="font-bold text-2xl md:text-4xl">Rilis Akhir 2024</h2>
+            <p class="md:text-base text-sm md:text-center text-justify">Saat ini PT Geokatalis Teknologi Pemetaan sedang dalam proses pengembangan web aplikasi Plannio yang akan diluncurkan ke publik pada Kuartal 4 - 2024 tahun ini. Dukung kami dalam pengembangan web aplikasi Plannio dengan melakukan Pre Order Plannio Pro. Dapatkan harga diskon pra peluncuran dan jadilah pengguna pertama aplikasi Plannio Pro saat rilis.</p>
           </div>
           <div class="flex justify-center">
-            <button class="px-8 py-3 text-base inline-block font-semibold bg-white btn-gradient-1">Pre Order Plannio</button>
+            <button class="px-8 py-3 text-xs md:text-base inline-block font-semibold bg-white btn-gradient-1 w-full md:w-fit">Pre Order Plannio</button>
           </div>
          </section>
 
          <!-- Social media -->
-          <section class="flex flex-col items-center text-center gap-9 mt-36">
-            <h3 class="font-bold text-2xl">Ikuti kami di sosial media untuk info terbaru</h3>
-            <div class="flex gap-28 text-base font-semibold">
+          <section class="flex flex-col items-center text-center gap-9 mt-20 md:mt-36 w-full px-[35px]">
+            <h3 class="font-bold text-base md:text-2xl">Ikuti kami di sosial media untuk info terbaru</h3>
+            <div class="flex gap-6 md:gap-28 text-xs md:text-base font-semibold">
               <div class="flex flex-col items-center gap-5 cursor-pointer">
-                <img src="src/assets/instagram.png" alt="" class="h-[60px] w-[60px]">
+                <img src="src/assets/instagram.png" alt="" class="h-10 w-10 md:h-[60px] md:w-[60px]">
                 <p>Instagram</p>
               </div>
               <div class="flex flex-col items-center gap-5 cursor-pointer">
-                <img src="src/assets/whatsapp.png" alt="" class="h-[60px] w-[60px]">
+                <img src="src/assets/whatsapp.png" alt="" class="h-10 w-10 md:h-[60px] md:w-[60px]">
                 <p>Channel Whatsapp</p>
               </div>
               <div class="flex flex-col items-center gap-5 cursor-pointer">
-                <img src="src/assets/linkedin.png" alt="" class="h-[60px] w-[60px]">
+                <img src="src/assets/linkedin.png" alt="" class="h-10 w-10 md:h-[60px] md:w-[60px]">
                 <p>Linked-In</p>
               </div>
             </div>
           </section>
 
           <!-- Section Langkah-langkah publish map -->
-          <section class="flex flex-col justify-center mt-28 gap-16 px-16 py-10 shadowiee rounded-lg">
-           <h2 class="text-4xl text-blacky font-bold text-left">Data SHP jadi online map hanya <span class="text-white bg-[#93C5FD] px-2"> 5 langkah </span></h2>
-            <div class="container max-h-[550px] flex justify-center">
+          <section class="flex flex-col justify-center mt-28 gap-4 md:gap-16 md:px-16 pt-10 pb-20 bg-gradient-to-b from-[#EFEFEF] md:from-inherit md:bg-white mid-shadow md:rounded-lg w-full px-[35px]">
+           <h2 class="text-2xl md:text-4xl text-blacky font-bold text-left">Data SHP jadi online map hanya <span class="text-white bg-[#93C5FD] px-2"> 5 langkah </span></h2>
+           <!-- langkah publish medium screen -->
+           <div class="container max-h-[550px] md:flex justify-center hidden">
               <img src="./src/assets/steps.png" alt="" class="">
+           </div>
+           <!-- langkah publish small screen -->
+           <div class="flex md:hidden justify-between p-2 gap-4 bg-white rounded-xl shadowiee">
+            <div class="p-3 bg-cyInfo rounded-xl">
+              <img src="./src/assets/daftar.png" alt="">
             </div>
+            <div class="flex flex-col w-full gap-2">
+              <h4 class="font-semibold text-base">Daftar<h4>
+              <p class="text-xs">Buat akun Plannio (Gratis!)</p>
+            </div>
+           </div>
+           <div class="flex md:hidden justify-between p-2 gap-4 bg-white rounded-xl shadowiee">
+            <div class="p-3 bg-cyInfo rounded-xl">
+              <img src="./src/assets/upload.png" alt="">
+            </div>
+            <div class="flex flex-col w-full gap-2">
+              <h4 class="font-semibold text-base">Upload<h4>
+              <p class="text-xs">Upload data SHP yang ingin dibuat petanya</p>
+            </div>
+           </div>
+           <div class="flex md:hidden justify-between p-2 gap-4 bg-white rounded-xl shadowiee">
+            <div class="p-3 bg-cyInfo rounded-xl">
+              <img src="./src/assets/pilih.png" alt="">
+            </div>
+            <div class="flex flex-col w-full gap-2">
+              <h4 class="font-semibold text-base">Pilih<h4>
+              <p class="text-xs">Pilih template tema tampilan peta.</p>
+            </div>
+           </div>
+           <div class="flex md:hidden justify-between p-2 gap-4 bg-white rounded-xl shadowiee">
+            <div class="p-3 bg-cyInfo rounded-xl">
+              <img src="./src/assets/simbologi.png" alt="">
+            </div>
+            <div class="flex flex-col w-full gap-2">
+              <h4 class="font-semibold text-base">Simbologi<h4>
+              <p class="text-xs">Atur simbol-simbol peta.</p>
+            </div>
+           </div>
+           <div class="flex md:hidden justify-between p-2 gap-4 bg-white rounded-xl shadowiee">
+            <div class="p-3 bg-cyInfo rounded-xl">
+              <img src="./src/assets/beres.png" alt="">
+            </div>
+            <div class="flex flex-col w-full gap-2">
+              <h4 class="font-semibold text-base">Beres!<h4>
+              <p class="text-xs">Peta siap dipakai, disimpan, atau dibagikan</p>
+            </div>
+           </div>
           </section>
 
           <!-- Section Komparasi Cara Plannio -->
-          <section class="flex flex-col items-center gap-14 my-28">
-           <h2 class="text-4xl text-blacky font-bold text-center">Mengapa publikasi data spasial di Plannio <br> lebih cepat dan lebih baik?</h2>
+          <section class="flex flex-col items-center gap-14 my-28 w-full px-[35px]">
+           <h2 class="text-2xl text-left md:text-4xl text-blacky font-bold md:text-center">Mengapa publikasi data spasial di Plannio <br> lebih cepat dan lebih baik?</h2>
            <!-- Dengan cara biasa -->
            <div class="flex items-start justify-end w-full relative">
              <div class="container flex flex-col w-80 border-2 gap-5 py-5 px-6 rounded-xl bg-white lg:left-0 lg:top-[116px]  lg:absolute lg:justify-start justify-center">
                <h4 class="text-2xl font-bold">Dengan cara biasa</h4>
-               <p>Kamu harus menyiapkan semua data di atas cuma untuk menyajikan satu data tematik menjadi peta</p>
+               <p>Kamu harus menyiapkan banyak data penunjang lain cuma untuk menyajikan satu data tematik menjadi peta</p>
              </div>
              <div class="bg-[#EFEFEF] rounded-xl w-5/6 p-2 flex justify-end">
-               <div class="container max-w-[760px]">                  
+               <div class="container max-w-[760px]">
                  <img src="./src/assets/layouting1.png" alt="">
                </div>
              </div>
@@ -109,7 +156,7 @@
            <div class="flex items-start justify-end w-full relative">
              <div class="container flex flex-col w-80 border-2 gap-5 py-5 px-6 rounded-xl bg-gradient-to-b from-[#93C5FD] to-[#E7E7FF] lg:left-0 lg:top-[116px]  lg:absolute lg:justify-start justify-center">
                <h4 class="text-2xl font-bold">Dengan <span class="bg-white px-1 font-opensans">PLANNIO</span></h4>
-               <p>Kamu harus menyiapkan semua data di atas cuma untuk menyajikan satu data tematik menjadi peta</p>
+               <p>Cukup siapkan data yang ingin kamu publish, sisanya kami yang atur. Sudah tersedia data penunjang penyajian peta untuk seluruh wilayah di dunia</p>
              </div>
              <div class="bg-[#EFEFEF] rounded-xl w-5/6 p-2 flex justify-end">
                <div class="container max-w-[760px]">                  

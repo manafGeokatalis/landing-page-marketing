@@ -13,7 +13,8 @@ export default {
         hoverBlue: '#A3CAFF',
         briWarning: '#F4BF37',
         bgStart: '#BEDCFE',
-        blacky: '#272727'
+        blacky: '#272727',
+        cyInfo: '#DBEAFE'
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],

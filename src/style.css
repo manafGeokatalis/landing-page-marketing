@@ -15,3 +15,9 @@
     border-radius: 12px;
     border: 2px solid transparent;
 }
+
+@media only screen and (min-width: 768px) {
+    .mid-shadow {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19)
+    }
+  }
