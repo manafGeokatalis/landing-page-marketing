@@ -7,8 +7,8 @@
     <title>Geokatalis | Plannio</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
-    <script type="module" crossorigin src="/assets/index-BVc46WrU.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CmLbyzoV.css">
+    <script type="module" crossorigin src="/assets/index-B_qPuesM.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CtvsOQTe.css">
   </head>
   <body>    
     <div id="app" class="font-sans relative">
@@ -342,11 +342,57 @@
                   </div>
                 </div>
               </div>
-              <button class="px-8 py-3 w-[390px] mx-auto text-xl inline-block font-semibold btn-gradient-1">Pre Order Plannio</button>
+              <!-- Modal pembayaran paket plannio pro -->
+              <section class="flex">
+                <button id="modal-trigger" class="px-8 py-3 w-[390px] mx-auto text-xl inline-block font-semibold btn-gradient-1">Pre Order Plannio</button>
+                <!-- modal element -->
+                <div id="modal-bg"  class="hidden fixed top-0 left-0 w-full h-screen justify-center items-center bgDarkparent z-20">
+                  <div class="flex flex-col gap-10 bg-white w-[532px] px-14 py-6 z-30 rounded-xl overflow-auto">
+                    <h4 class="font-bold text-2xl text-center">Pre Order Plannio</h4>
+                    <form method="post" action="https://script.google.com/macros/s/AKfycbwqWm_C_GIFhYLwg34g527VShexBnPywF-5zjR6qTrTraOFRADrE5U12zWFZYk-BPYbZA/exec" name="daftar-preorder" class="flex flex-col gap-10">
+                      <!-- input group -->
+                      <div class="flex flex-col gap-4">
+                        <input required class="border-[1px] border-primer rounded-2xl py-4 px-3 text-base focus:border-darkBlue focus:ring-darkBlue focus:ring-p focus:outline-none transition-colors duration-300" type="text" placeholder="nama" name="nama">
+                        <input required class="border-[1px] border-primer rounded-2xl py-4 px-3 text-base focus:border-darkBlue focus:ring-darkBlue focus:ring-p focus:outline-none transition-colors duration-300" type="email" placeholder="E-mail" name="e-mail">
+                        <input required class="border-[1px] border-primer rounded-2xl py-4 px-3 text-base focus:border-darkBlue focus:ring-darkBlue focus:ring-p focus:outline-none transition-colors duration-300" type="number" placeholder="No. Whatsapp" name="nomer-wa">
+                      </div>
+                      <!-- radio group -->
+                      <div class="flex flex-col gap-10">
+                        <div class="flex justify-between">
+                          <div class="flex gap-2 items-center">
+                            <input required id="tiga-bulan" type="radio" name="paket" value="tiga-bulan" class="tiga-bulan h-5 w-5 cursor-pointer">
+                            <label for="tiga-bulan" class="tiga-bulan text-base font-semibold cursor-pointer">Plannio Pro 3 Bulan</label>
+                          </div>
+                          <div class="flex gap-2 items-center">
+                            <input required id="satu-tahun" type="radio" name="paket" value="satu-tahun" class="setahun h-5 w-5 cursor-pointer">
+                            <label for="satu-tahun" class="setahun text-base font-semibold cursor-pointer ">Plannio Pro 1 Tahun</label>
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-10">
+                          <div class="flex flex-col gap-3">
+                            <div class="flex justify-between text-base text-gray-600">
+                              <p id="nama-paket">Pilih paket</p>
+                              <p>1 x</p>
+                            </div>
+                            <div class="flex justify-between items-center bg-bgStart text-darkBlue py-1 px-2">
+                              <p class="font-semibold text-base">TOTAL BAYAR</p>
+                              <p id="harga" class="font-bold text-2xl">Rp0</p>
+                            </div>
+                          </div>
+                          <div class="flex flex-col">
+                            <input type="submit" class="w-full bg-darkBlue text-white font-semibold text-base px-6 py-3 rounded-xl text-center cursor-pointer" value="Lanjut pembayaran">
+                            <a id="batal" class="text-gray-600 text-base mx-auto mt-3 hover:underline cursor-pointer">Batalkan</a>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
             </div>
           </section>
           <footer class="flex justify-between items-center px-20 h-24">
-            <img src="/assets/logo-geokatalis-vector-CwGPlSk9.svg" alt="">
+            <img src="/assets/logo-geokatalis-vector-CEaYxuwr.svg" alt="">
             <p>© 2024 Geokatalis. All right reserved.</p>
           </footer>
     </div>

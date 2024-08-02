@@ -14,7 +14,8 @@ export default {
         briWarning: '#F4BF37',
         bgStart: '#BEDCFE',
         blacky: '#272727',
-        cyInfo: '#DBEAFE'
+        cyInfo: '#DBEAFE',
+        primer: '#93C5FD'
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],

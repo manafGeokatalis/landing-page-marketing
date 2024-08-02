@@ -9,6 +9,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19)
 }
 
+.bgDarkparent {
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
 .btn-gradient-1 {
     background: linear-gradient(white, white) padding-box,
                 linear-gradient(to right, #1E3A8A, #93C5FD) border-box;
