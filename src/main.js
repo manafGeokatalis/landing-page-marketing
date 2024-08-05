@@ -89,15 +89,12 @@ for (let i = 0; i < elTigaBulan.length; i++) {
 
 
 
-
-
-
-
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwqWm_C_GIFhYLwg34g527VShexBnPywF-5zjR6qTrTraOFRADrE5U12zWFZYk-BPYbZA/exec'
 form.addEventListener('submit', e => {
   e.preventDefault()
+  window.open(paketTerpilih);
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => window.open(paketTerpilih))
+  .then(response => console.log("post success"))
   .then(() => { window.location.reload(); })
   .catch(error => console.error('Error!', error.message))
 })
