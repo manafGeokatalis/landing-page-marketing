@@ -8,7 +8,10 @@ const elTigaBulan = document.querySelectorAll(".tiga-bulan");
 const elSetahun = document.querySelectorAll(".setahun");
 const namaPaket = document.querySelector("#nama-paket");
 const harga = document.querySelector("#harga");
-const form = document.forms['daftar-preorder']
+const form = document.forms['daftar-preorder'];
+const elInsta = document.querySelectorAll(".instagram");
+const elWa = document.querySelectorAll(".whatsapp");
+const elLinkedin = document.querySelectorAll(".linkedin");
 
 
 
@@ -101,7 +104,11 @@ form.addEventListener('submit', e => {
 
 
 
-
+for (let x of elInsta) {
+    x.addEventListener("click", () => {
+        window.open('https://www.instagram.com/geokatalis?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==')
+    })
+}
 
 
 
