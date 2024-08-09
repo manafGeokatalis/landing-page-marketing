@@ -137,68 +137,106 @@
            </div>
           </section>
 
-          <!-- Section Komparasi Cara Plannio -->
-          <section class="flex flex-col items-center gap-14 my-28 w-full px-[35px]">
-           <h2 class="text-2xl text-left md:text-4xl text-blacky font-bold md:text-center">Mengapa publikasi data spasial di Plannio <br> lebih cepat dan lebih baik?</h2>
+          <!-- Section Komparasi Cara Plannio PC -->
+          <section class="hidden md:flex md:flex-col items-center gap-14 my-28 w-full px-[35px]">
+           <h2 class="text-4xl text-blacky font-bold text-center">Mengapa publikasi data spasial di Plannio <br> lebih cepat dan lebih baik?</h2>
            <!-- Dengan cara biasa -->
-           <div class="flex items-start justify-end w-full relative">
-             <div class="container flex flex-col w-80 border-2 gap-5 py-5 px-6 rounded-xl bg-white lg:left-0 lg:top-[116px]  lg:absolute lg:justify-start justify-center">
+           <div class="flex xl:items-start items-center justify-end w-full relative">
+             <div class="container flex flex-col w-72 border-2 gap-5 py-5 px-6 rounded-xl bg-white xl:left-0 xl:top-[100px] xl:absolute xl:justify-start justify-center">
                <h4 class="text-2xl font-bold">Dengan cara biasa</h4>
                <p>Kamu harus menyiapkan banyak data penunjang lain cuma untuk menyajikan satu data tematik menjadi peta</p>
              </div>
              <div class="bg-[#EFEFEF] rounded-xl w-5/6 p-2 flex justify-end">
-               <div class="container max-w-[760px]">
+              <div class="w-20 hidden xl:block">
+                </div> 
+              <div class="container max-w-[760px] p-4">
                  <img src="./src/assets/layouting1.png" alt="">
                </div>
              </div>
            </div>
            <!-- Dengan menggunakan plannio -->
-           <div class="flex items-start justify-end w-full relative">
-             <div class="container flex flex-col w-80 border-2 gap-5 py-5 px-6 rounded-xl bg-gradient-to-b from-[#93C5FD] to-[#E7E7FF] lg:left-0 lg:top-[116px]  lg:absolute lg:justify-start justify-center">
+           <div class="flex xl:items-start items-center justify-end w-full relative">
+             <div class="container flex flex-col w-72 border-2 gap-5 py-5 px-6 rounded-xl bg-gradient-to-b from-[#93C5FD] to-[#E7E7FF] xl:left-0 xl:top-[100px] xl:absolute xl:justify-start justify-center">
                <h4 class="text-2xl font-bold">Dengan <span class="bg-white px-1 font-opensans">PLANNIO</span></h4>
                <p>Cukup siapkan data yang ingin kamu publish, sisanya kami yang atur. Sudah tersedia data penunjang penyajian peta untuk seluruh wilayah di dunia</p>
              </div>
              <div class="bg-[#EFEFEF] rounded-xl w-5/6 p-2 flex justify-end">
-               <div class="container max-w-[760px]">                  
-                 <img src="./src/assets/layouting2.png" alt="">
-               </div>
+              <div class="w-20 hidden xl:block">
+              </div>
+              <div class="container max-w-[760px] p-4">                  
+                <img src="./src/assets/layouting2.png" alt="">
+              </div>
              </div>
            </div>           
           </section>          
          </div>
+
+         <!-- Section Komparasi Cara Plannio Mobile -->
+         <section class="md:hidden flex flex-col items-center gap-14 my-28 w-full">
+          <h2 class="text-2xl text-left text-blacky font-bold px-[35px]">Mengapa publikasi data spasial di Plannio <br> lebih cepat dan lebih baik?</h2>
+          <!-- Dengan cara biasa -->
+          <div class="flex items-center justify-end w-full relative mt-24">
+            <div class=" bg-white container flex flex-col w-[258px] gap-2 p-3 shadowiee rounded-xl -top-[89px] left-[35px] absolute justify-center">
+              <h4 class="text-base font-bold">Dengan cara biasa</h4>
+              <p class="text-xs">Kamu harus menyiapkan banyak data penunjang lain cuma untuk menyajikan satu data tematik menjadi peta</p>
+            </div>
+            <div class="bg-[#EFEFEF] w-full overflow-auto">
+             <div class="w-[490px] p-4">
+                <img class="flex my-auto" src="./src/assets/layouting1.png" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Dengan menggunakan plannio -->
+          <div class="flex items-center justify-end w-full relative mt-24">
+            <div class="bg-gradient-to-b from-[#93C5FD] to-[#E7E7FF] container flex flex-col w-[258px] gap-2 p-3 shadowiee rounded-xl -top-[110px] right-[35px] absolute justify-center">
+              <h4 class="text-base font-bold">Dengan <span class="bg-white px-1 font-opensans">PLANNIO</span></h4>
+              <p class="text-xs">Cukup siapkan data yang ingin kamu publish, sisanya kami yang atur. Sudah tersedia data penunjang penyajian peta untuk seluruh wilayah di dunia</p>
+            </div>
+            <div class="bg-[#EFEFEF] w-full px-5 overflow-auto">
+             <div class="w-[490px] p-4">                  
+               <img class="flex my-auto" src="./src/assets/layouting2.png" alt="">
+             </div>
+            </div>
+          </div>           
+         </section>
+
+
          <!-- background relative fitur-fitur -->
-         <div class="absolute w-full h-[3605px] bg-gradient-to-b from-[#DBEAFE] to-white mt-40 -z-10"></div>
-         <div class="max-w-[1120px] mx-auto z-0">
+         <div class="absolute w-full h-[3087px] bg-gradient-to-b from-[#DBEAFE] to-white mt-5 md:mt-40 -z-10"></div>
+         <!-- body container again -->
+         <div class="w-full md:max-w-[1120px] md:mx-auto z-0">
           <!-- Fitur-fitur plannio -->
-          <section class="mt-80">
+          <section class="mt-40 md:mt-80">
             <!-- seperti medsos -->
-            <div class="flex flex-col items-start gap-20">
-              <h2 class="text-5xl text-blacky font-bold text-left w-[824px]">Interaksi dan kolaborasi pemetaan dengan fitur seperti <span class="text-white bg-[#93C5FD] px-2"> media sosial </span></h2>
-              <div class="flex justify-end w-full gap-[159px]">
-                <div class="relative">
+            <div class="flex flex-col items-start gap-5 md:gap-20 px-[35px] md:px-0">
+              <h2 class="text-2xl md:text-5xl text-blacky font-bold text-left w-full md:w-[824px]">Interaksi dan kolaborasi pemetaan dengan fitur seperti <span class="text-white bg-[#93C5FD] px-2"> media sosial </span></h2>
+              <div class="flex md:flex-row flex-col justify-end w-full gap-[159px]">
+                <div class="md:block flex justify-between items-center md:w-fit w-full relative bg-slate-100">
                   <div class="absolute -top-[55px] -left-[248px] w-[800px] h-[800px] -z-10">
                     <img src="./src/assets/ellipse-16.png" alt="" class="">
                   </div>
                   <img src="./src/assets/hp.png" alt="" class="">
-                  <div class="flex flex-col items-center text-center absolute top-[99px] -left-[162px]">
-                    <img src="./src/assets/comment.png" alt="" class="">
-                    <p>Komentar</p>
-                  </div>
-                  <div class="flex flex-col items-center text-center absolute top-[330px] -left-[162px]">
-                    <img src="./src/assets/like.png" alt="" class="">
-                    <p>Suka</p>
-                  </div>
-                  <div class="flex flex-col items-center text-center absolute top-[531px] -left-[134px]">
-                    <img src="./src/assets/share.png" alt="" class="">
-                    <p>Bagikan</p>
-                  </div>
-                  <div class="flex flex-col items-center text-center absolute top-[292px] left-[344px]">
-                    <img src="./src/assets/notif.png" alt="" class="">
-                    <p>Pemberitahuan</p>
-                  </div>
-                  <div class="flex flex-col items-center text-center absolute top-[487px] left-[355px]">
-                    <img src="./src/assets/save.png" alt="" class="">
-                    <p>Follow</p>
+                  <div class="flex flex-col gap-9 static">
+                    <div class="flex flex-col items-center text-center md:absolute md:top-[99px] md:-left-[162px]">
+                      <img class="scale-75" src="./src/assets/comment.png" alt="" class="">
+                      <p class="text-xs">Komentar</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center md:absolute md:top-[330px] md:-left-[162px]">
+                      <img src="./src/assets/like.png" alt="" class="">
+                      <p class="text-xs">Suka</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center md:absolute md:top-[531px] md:-left-[134px]">
+                      <img src="./src/assets/share.png" alt="" class="">
+                      <p class="text-xs">Bagikan</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center md:absolute md:top-[292px] md:left-[344px]">
+                      <img src="./src/assets/notif.png" alt="" class="">
+                      <p class="text-xs">Pemberitahuan</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center md:absolute md:top-[487px] md:left-[355px]">
+                      <img src="./src/assets/save.png" alt="" class="">
+                      <p class="text-xs">Follow</p>
+                    </div>
                   </div>
                 </div>
                 <div class="flex flex-col gap-5 w-[341px]">
@@ -207,6 +245,7 @@
                 </div>
               </div>
             </div>
+
             <!-- comment on map object -->
              <div class="flex flex-col gap-14 mt-32 px-10 py-5 bg-white rounded-xl">
               <h3 class="font-bold text-4xl">Lakukan pemetaan partisipatif dengan fitur komentar langsung pada muka peta</h3>
